@@ -214,7 +214,7 @@ button {
 
 /* ========== TicTacToe.jsx ========== */
 
-table {
+/* table {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,11 +244,11 @@ h3 {
   border: 2px solid black;
   border-radius: 20px;
   background-color: aquamarine;
-}
+} */
 
 /* ========== Studentresult.jsx ========== */
 
-/* input {
+input {
   width: 170px;
 }
 
@@ -291,4 +291,14 @@ table thead tr th {
   color: whitesmoke;
   font-size: 25px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-} */
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0px;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: aquamarine;
+}

@@ -9,18 +9,44 @@ const Studentresult = () => {
     const [english, setEnglish] = useState('')
     const [science, setScience] = useState('')
     const [list, setList] = useState([])
+    const [editId, setEditId] = useState(null)
 
     const handleSubmit = () => {
 
         const object = { rollno, name, maths, english, science }
 
-        setList([...list, object])
+        if (editId != null) {
+            let copyData = [...list]
+            copyData[editId] = object
+            setList(copyData)
+            setEditId(null)
+        }
+        else {
+            setList([...list, object])
+        }
+
+        // setList([...list, object])
 
         setRollno('')
         setName('')
         setMaths('')
         setEnglish('')
         setScience('')
+    }
+
+    const editData = (edit, index) => {
+        setRollno(edit.rollno)
+        setName(edit.name)
+        setMaths(edit.maths)
+        setEnglish(edit.english)
+        setScience(edit.science)
+        setEditId(index)
+    }
+
+    const deleteData = (index) => {
+        let copyData = [...list]
+        copyData.splice(index, 1)
+        setList(copyData)
     }
 
     return (
@@ -37,7 +63,7 @@ const Studentresult = () => {
                     <br /><br />
                     <input type="number" placeholder='Science Marks :- ' min={1} max={100} value={science} onChange={(e) => setScience(e.target.value)} />
                     <br /><br />
-                    <button onClick={handleSubmit}>Submit</button>
+                    <button className='Button' onClick={handleSubmit}>Submit</button>
 
                     <div className='Result'>
                         <table>
@@ -51,10 +77,10 @@ const Studentresult = () => {
                                     <th colSpan={3}>Subject</th>
                                     <th rowSpan={2}>Total</th>
                                     <th rowSpan={2}>Percentage</th>
-                                    <th rowSpan={2}>Grade</th>
                                     <th rowSpan={2}>Minimum</th>
                                     <th rowSpan={2}>Maximum</th>
-                                    <th rowSpan={2}>Average</th>
+                                    <th rowSpan={2}>Edit</th>
+                                    <th rowSpan={2}>Delate</th>
                                 </tr>
                                 <tr>
                                     {/* <th>Roll No.</th>
@@ -68,17 +94,33 @@ const Studentresult = () => {
                                 {
                                     list.map((i, index) => (
                                         <tr key={index}>
-                                            <th>{i.rollno}</th>
-                                            <th>{i.name}</th>
-                                            <th>{i.maths}</th>
-                                            <th>{i.english}</th>
-                                            <th>{i.science}</th>
-                                            <th>
+                                            <td>{i.rollno}</td>
+                                            <td>{i.name}</td>
+                                            <td>{i.maths}</td>
+                                            <td>{i.english}</td>
+                                            <td>{i.science}</td>
+                                            <td>
                                                 {Number(i.maths) + Number(i.english) + Number(i.science)}
-                                            </th>
-                                            <th>
-                                                {(Number(i.maths) + Number(i.english) + Number(i.science)) / 3}
-                                            </th>
+                                            </td>
+                                            <td>
+                                                {(Number(i.maths) + Number(i.english) + Number(i.science)) / 3 + "%"}
+                                            </td>
+                                            <td>
+                                                {
+                                                    (Math.min(Number(i.maths), Number(i.english), Number(i.science)))
+                                                }
+                                            </td>
+                                            <td>
+                                                {
+                                                    (Math.max(Number(i.maths), Number(i.english), Number(i.science)))
+                                                }
+                                            </td>
+                                            <td>
+                                                <button className='Button' onClick={() => editData(i, index)}>Edit</button>
+                                            </td>
+                                            <td>
+                                                <button className='Button' onClick={() => deleteData(index)}>Delete</button>
+                                            </td>
                                         </tr>
                                     ))
                                 }
