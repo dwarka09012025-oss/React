@@ -1,6 +1,6 @@
 import './App.css';
-import Studentresult from './Components/Studentresult';
-// import TicTacToe from './Components/TicTacToe';
+// import Studentresult from './Components/Studentresult';
+import TicTacToe from './Components/TicTacToe';
 // import Tictectoe1 from './Components/Tictectoe1.jsx'
 // import Show from './Components/Show';
 // import InputHandle from './Components/InputHandle';
@@ -36,9 +36,9 @@ function App() {
       {/* <Bootstrap /> */}
       {/* <InputHandle /> */}
       {/* <Show /> */}
-      {/* <TicTacToe /> */}
+      <TicTacToe />
       {/* <Tictectoe1 /> */}
-      <Studentresult />
+      {/* <Studentresult /> */}
 
       {/* <Router>
         <Switch>
