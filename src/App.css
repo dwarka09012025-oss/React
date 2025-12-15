@@ -214,7 +214,7 @@ button {
 
 /* ========== TicTacToe.jsx ========== */
 
-table {
+/* table {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,11 +244,11 @@ h3 {
   border: 2px solid black;
   border-radius: 20px;
   background-color: aquamarine;
-}
+} */
 
 /* ========== Studentresult.jsx ========== */
 
-/* input {
+input {
   width: 170px;
 }
 
@@ -301,4 +301,4 @@ table thead tr th {
   border: 2px solid black;
   border-radius: 20px;
   background-color: aquamarine;
-} */
+}
