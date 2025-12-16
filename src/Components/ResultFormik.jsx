@@ -1,7 +1,6 @@
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import './ResultFormik.css'
 
 const ResultFormik = () => {
 
