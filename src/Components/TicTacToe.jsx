@@ -7,6 +7,7 @@ const TicTacToe = () => {
     const [xIsNext, setXIsNext] = useState(true);
 
     const winner = calculateWinner(board);
+    const isBoardFull = board.every(cell => cell !== null);
 
     const Click = (i) => {
         if (winner || board[i]) return;
@@ -20,7 +21,7 @@ const TicTacToe = () => {
     const renderSquare = (i) => (
         <div
             onClick={() => Click(i)}
-            style={{ width: '100px', height: '100px', border: '1px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '30px' }}
+            style={{ width: '100px', height: '100px', border: '2px solid black', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '50px', color: 'white', borderRadius: '10px', margin: '5px', backgroundColor: 'blue' }}
         >
             {board[i]}
         </div>
@@ -46,11 +47,20 @@ const TicTacToe = () => {
         return null;
     }
 
+    let status;
+    if (winner) {
+        status = `Winner: ${winner} 🎉`;
+    } else if (isBoardFull) {
+        status = "It's a Draw! 🤝";
+    } else {
+        status = `Player: ${xIsNext ? 'X' : 'O'}`;
+    }
+
     return (
         <Container className="mt-5">
-            <h3>{winner ? `Winner: ${winner}` : `Player: ${xIsNext ? 'X' : 'O'}`}</h3>
+            <h3>{status}</h3>
             <table>
-                <tbody>
+                <tbody style={{ border: '2px solid black', borderRadius: '10px', padding: '10px', backgroundColor: 'skyblue' }}>
                     <tr>
                         <td>{renderSquare(0)}</td>
                         <td>{renderSquare(1)}</td>
