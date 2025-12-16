@@ -1,6 +1,7 @@
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
+import './ResultFormik.css'
 
 const ResultFormik = () => {
 
@@ -95,67 +96,88 @@ const ResultFormik = () => {
 
     return (
         <>
-            <Container>
+            <Container fluid className='py-4'>
                 <div className='Student'>
-                    <form action="" onSubmit={f.handleSubmit}>
-                        <input type="number" name="rollno" placeholder='Roll no. :- ' onChange={f.handleChange} value={f.values.rollno} /> <br /><br />
-                        <input type="text" name="name" placeholder='Full Name :- ' onChange={f.handleChange} value={f.values.name} /> <br /><br />
-                        <input type="number" name="maths" placeholder='Maths Marks :- ' onChange={f.handleChange} value={f.values.maths} /> <br /><br />
-                        <input type="number" name="science" placeholder='Science Marks :- ' onChange={f.handleChange} value={f.values.science} /> <br /><br />
-                        <input type="number" name="english" placeholder='English Marks :- ' onChange={f.handleChange} value={f.values.english} /> <br /><br />
-                        <button type="submit" className='Button'>Submit</button>
-                    </form>
+                    <Row className='mb-4'>
+                        <Col lg={6} md={8} sm={12} className='mx-auto'>
+                            <div className='form-card'>
+                                <h3 className='mb-4 text-center'>Student Information</h3>
+                                <form onSubmit={f.handleSubmit}>
+                                    <div className='mb-3'>
+                                        <input type="number" name="rollno" className='form-control' placeholder='Roll no. :- ' onChange={f.handleChange} value={f.values.rollno} />
+                                    </div>
+                                    <div className='mb-3'>
+                                        <input type="text" name="name" className='form-control' placeholder='Full Name :- ' onChange={f.handleChange} value={f.values.name} />
+                                    </div>
+                                    <div className='mb-3'>
+                                        <input type="number" name="maths" className='form-control' placeholder='Maths Marks :- ' onChange={f.handleChange} value={f.values.maths} />
+                                    </div>
+                                    <div className='mb-3'>
+                                        <input type="number" name="science" className='form-control' placeholder='Science Marks :- ' onChange={f.handleChange} value={f.values.science} />
+                                    </div>
+                                    <div className='mb-3'>
+                                        <input type="number" name="english" className='form-control' placeholder='English Marks :- ' onChange={f.handleChange} value={f.values.english} />
+                                    </div>
+                                    <button type="submit" className='btn btn-primary w-100'>Submit</button>
+                                </form>
+                            </div>
+                        </Col>
+                    </Row>
 
-                    <div className='Result'>
-                        <table border={1}>
-                            <thead>
-                                <tr className='TR'>
-                                    <th colSpan={12}>RESULT</th>
-                                </tr>
-                                <tr>
-                                    <th rowSpan={2}>Roll no.</th>
-                                    <th rowSpan={2}>Student Name</th>
-                                    <th colSpan={3}>Subject</th>
-                                    <th rowSpan={2}>Total</th>
-                                    <th rowSpan={2}>Percentage</th>
-                                    <th rowSpan={2}>Grade</th>
-                                    <th rowSpan={2}>Minimum</th>
-                                    <th rowSpan={2}>Maximum</th>
-                                    <th rowSpan={2}>Edit</th>
-                                    <th rowSpan={2}>Delate</th>
-                                </tr>
-                                <tr>
-                                    <th>Maths</th>
-                                    <th>English</th>
-                                    <th>Science</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    list.map((i, index) => (
-                                        <tr>
-                                            <td>{i.rollno}</td>
-                                            <td>{i.name}</td>
-                                            <td>{i.maths}</td>
-                                            <td>{i.science}</td>
-                                            <td>{i.english}</td>
-                                            <td>{total(i)}</td>
-                                            <td>{per(i)}%</td>
-                                            <td>{grade(i)}</td>
-                                            <td>{min(i)}</td>
-                                            <td>{max(i)}</td>
-                                            <td>
-                                                <button className='Button' onClick={() => editData(i, index)}>Edit</button>
-                                            </td>
-                                            <td>
-                                                <button className='Button' onClick={() => deleteData(index)}>Delete</button>
-                                            </td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                    <Row>
+                        <Col xs={12}>
+                            <div className='Result'>
+                                <h3 className='mb-4 text-center'>Results</h3>
+                                <div className='table-responsive'>
+                                    <table className='table table-bordered table-hover'>
+                                        <thead className='table-dark'>
+                                            <tr>
+                                                <th colSpan={12} className='text-center'>RESULT</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Roll no.</th>
+                                                <th>Student Name</th>
+                                                <th>Maths</th>
+                                                <th>Science</th>
+                                                <th>English</th>
+                                                <th>Total</th>
+                                                <th>Percentage</th>
+                                                <th>Grade</th>
+                                                <th>Min</th>
+                                                <th>Max</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                list.map((i, index) => (
+                                                    <tr key={index}>
+                                                        <td>{i.rollno}</td>
+                                                        <td>{i.name}</td>
+                                                        <td>{i.maths}</td>
+                                                        <td>{i.science}</td>
+                                                        <td>{i.english}</td>
+                                                        <td><strong>{total(i)}</strong></td>
+                                                        <td>{per(i)}%</td>
+                                                        <td><span className='badge bg-info'>{grade(i)}</span></td>
+                                                        <td>{min(i)}</td>
+                                                        <td>{max(i)}</td>
+                                                        <td>
+                                                            <button className='btn btn-sm btn-warning' onClick={() => editData(i, index)}>Edit</button>
+                                                        </td>
+                                                        <td>
+                                                            <button className='btn btn-sm btn-danger' onClick={() => deleteData(index)}>Delete</button>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
                 </div>
             </Container>
         </>
