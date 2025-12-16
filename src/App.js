@@ -1,5 +1,6 @@
 import './App.css';
-import ResultFormik from './Components/ResultFormik';
+// import ResultFormik from './Components/ResultFormik';
+import ResultFormikTag from './Components/ResultFormikTag';
 // import FormikTag from './Components/FormikTag';
 // import Formik from './Components/Formik';
 // import Studentresult from './Components/Studentresult';
@@ -41,10 +42,11 @@ function App() {
       {/* <Show /> */}
       {/* <TicTacToe /> */}
       {/* <Tictectoe1 /> */}
-      {/* { <Studentresult /> } */}
+      {/* <Studentresult /> */}
       {/* <Formik /> */}
       {/* <FormikTag /> */}
-      <ResultFormik />
+      {/* <ResultFormik /> */}
+      <ResultFormikTag />
 
       {/* <Router>
         <Switch>
