@@ -47,7 +47,13 @@ const ResultFormikTag = () => {
     }
 
     const per = (i) => {
-        return total(i) / 3
+        // return total(i) / 3
+        if (Number(i.maths) <= 35 || Number(i.english) <= 35 || Number(i.science) <= 35) {
+            return "Fail!!";
+        }
+        else {
+            return total(i) / 3;
+        }
     }
 
     const grade = (i) => {
@@ -65,7 +71,7 @@ const ResultFormikTag = () => {
         } else if (gredeValues >= 50 && gredeValues < 60) {
             return "D"
         } else {
-            return "F"
+            return "Fail!!"
         }
     }
 
