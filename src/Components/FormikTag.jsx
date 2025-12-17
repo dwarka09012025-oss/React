@@ -19,7 +19,7 @@ const FormikTag = () => {
                 <Form>
                     <Field name="name"></Field><br /><br />
                     <Field name="surname"></Field><br /><br />
-                    <button type="submit">Submit</button>
+                    <button type="submit">Add</button>
                 </Form>
             </Formik>
 
