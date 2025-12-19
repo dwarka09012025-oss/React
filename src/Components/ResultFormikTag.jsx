@@ -20,7 +20,7 @@ const ResultFormikTag = () => {
             return
         }
         else {
-            setList([...list, values])
+            setList([...list, values] )
         }
         // setList([...list, values])
         resetForm()

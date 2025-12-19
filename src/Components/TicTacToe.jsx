@@ -49,11 +49,16 @@ const TicTacToe = () => {
 
     let status;
     if (winner) {
-        status = `Winner: ${winner} 🎉`;
+        status = `Winner :- ${winner} 🎉`;
     } else if (isBoardFull) {
         status = "It's a Draw! 🤝";
     } else {
-        status = `Player: ${xIsNext ? 'X' : 'O'}`;
+        status = `Player :- ${xIsNext ? 'X' : 'O'}`;
+        // if (xIsNext) {
+        //     status = "Player X's turn";
+        // } else {
+        //     status = "Player O's turn";
+        // }
     }
 
     return (
