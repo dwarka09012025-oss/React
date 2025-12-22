@@ -54,11 +54,6 @@ const TicTacToe = () => {
         status = "It's a Draw! 🤝";
     } else {
         status = `Player :- ${xIsNext ? 'X' : 'O'}`;
-        // if (xIsNext) {
-        //     status = "Player X's turn";
-        // } else {
-        //     status = "Player O's turn";
-        // }
     }
 
     return (

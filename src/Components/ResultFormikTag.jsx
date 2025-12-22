@@ -20,7 +20,7 @@ const ResultFormikTag = () => {
             return
         }
         else {
-            setList([...list, values] )
+            setList([...list, values])
         }
         // setList([...list, values])
         resetForm()
@@ -49,7 +49,7 @@ const ResultFormikTag = () => {
     const per = (i) => {
         // return total(i) / 3
         if (Number(i.maths) <= 35 || Number(i.english) <= 35 || Number(i.science) <= 35) {
-            return "--";
+            return "0";
         }
         else {
             return total(i) / 3;
@@ -70,6 +70,8 @@ const ResultFormikTag = () => {
             return "C"
         } else if (gredeValues >= 50 && gredeValues < 60) {
             return "D"
+        } else if (gredeValues >= 35 && gredeValues < 50) {
+            return 'E'
         } else {
             return "Fail!!"
         }
