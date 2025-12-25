@@ -1,13 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
+// import { Slide, ToastContainer, toast } from 'react-toastify';
 
 const ApiCalling = () => {
 
-    const [list, setList] = useState([])
-    // const [list1, setList1] = useState([])
-    const [list2, setList2] = useState([])
-    const [list3, setList3] = useState([])
+    // const [list, setList] = useState([])
+    const [list1, setList1] = useState([])
+    // const [list2, setList2] = useState([])
+    // const [list3, setList3] = useState([])
+    // const [list4, setList4] = useState([])
+
+    // const token = 'LpVCE0K5OOBStEfx'
 
     // const [no, setNo] = useState(0)
     // useEffect(() => {
@@ -19,55 +23,89 @@ const ApiCalling = () => {
     useEffect(() => {
         // console.log("test");
 
-        ProductesData()
-        // CardData()
-        PostData()
-        CommentsData()
+        // ProductesData()
+        CardData()
+        // PostData()
+        // CommentsData()
+        // Data1()
     }, [])
 
-    function ProductesData() {
-        axios.get('https://dummyjson.com/products')
-            .then((res) => {
-                console.log(res.data.products);
-                setList(res.data.products)
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }
-
-    // function CardData() {
-    //     axios.get('https://dummyjson.com/carts')
+    // function ProductesData() {
+    //     axios.get('https://dummyjson.com/products')
     //         .then((res) => {
-    //             console.log(res.data.carts);
-    //             setList1(res.data.carts)
+    //             console.log(res.data.products);
+    //             setList(res.data.products)
     //         })
     //         .catch((error) => {
     //             console.log(error);
     //         })
     // }
 
-    function PostData() {
-        axios.get('https://dummyjson.com/posts')
+    function CardData() {
+        axios.get('https://dummyjson.com/carts')
             .then((res) => {
-                console.log(res.data.posts);
-                setList2(res.data.posts)
+                console.log(res.data.carts);
+                setList1(res.data.carts)
             })
             .catch((error) => {
                 console.log(error);
             })
     }
 
-    function CommentsData() {
-        axios.get('https://dummyjson.com/comments')
-            .then((res) => {
-                console.log(res.data.comments);
-                setList3(res.data.comments)
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }
+    // function PostData() {
+    //     axios.get('https://dummyjson.com/posts')
+    //         .then((res) => {
+    //             console.log(res.data.posts);
+    //             setList2(res.data.posts)
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         })
+    // }
+
+    // function CommentsData() {
+    //     axios.get('https://dummyjson.com/comments')
+    //         .then((res) => {
+    //             console.log(res.data.comments);
+    //             setList3(res.data.comments)
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         })
+    // }
+
+    // function Data1() {
+    //     axios.get(' https://generateapi.techsnack.online/api/Product', {
+    //         headers: {
+    //             Authorization: token
+    //         }
+    //     })
+    //         .then((res) => {
+    //             console.log(res.data.Data);
+    //             setList4(res.data.Data)
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         })
+    // }
+
+    // const deleteData = (id) => {
+    //     // console.log(id);
+    //     // axios.delete('https://generateapi.techsnack.online/api/Product/' + id)
+    //     axios.delete(`https://generateapi.techsnack.online/api/Product/${id}`, {
+    //         headers: {
+    //             Authorization: token
+    //         },
+    //     })
+    //         .then((id) => {
+    //             // console.log(id);
+    //             toast.success("Success")
+    //             Data1()
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         })
+    // }
 
     return (
         <>
@@ -77,7 +115,7 @@ const ApiCalling = () => {
             <center>
                 <Container>
 
-                    <h1 style={{ padding: '25px 0px' }}>Productes Data</h1>
+                    {/* <h1 style={{ padding: '25px 0px' }}>Productes Data</h1>
                     <table border={1}>
                         <thead>
                             <tr>
@@ -116,30 +154,38 @@ const ApiCalling = () => {
                             }
                         </tbody>
                     </table>
+                    <br /><br /><br /> */}
+
+                    <h1 style={{ padding: '25px 0px' }}>Cards Data</h1>
+                    <table border={1}>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Products</th>
+                                <th>Total</th>
+                                <th>TotalProducts</th>
+                                <th>TotalQuantity</th>
+                                <th>UserId</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                list1.map((i, index) => (
+                                    <tr key={index}>
+                                        <td>{i.id}</td>
+                                        <td>{i.products}</td>
+                                        <td>{i.total}</td>
+                                        <td>{i.totalProducts}</td>
+                                        <td>{i.totalQuantity}</td>
+                                        <td>{i.userId}</td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
                     <br /><br /><br />
 
-                    {/* <h1 style={{ padding: '25px 0px' }}>Cards Data</h1>
-                <table border={1}>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Title</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            list1.map((i, index) => (
-                                <tr key={index}>
-                                    <td>{i.id}</td>
-                                    <td>{i.products.id}</td>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                </table>
-                <br /><br /><br /> */}
-
-                    <h1 style={{ padding: '25px 0px' }}>Posts Data</h1>
+                    {/* <h1 style={{ padding: '25px 0px' }}>Posts Data</h1>
                     <table border={1}>
                         <thead>
                             <tr>
@@ -164,9 +210,9 @@ const ApiCalling = () => {
                             }
                         </tbody>
                     </table>
-                    <br /><br /><br />
+                    <br /><br /><br /> */}
 
-                    <h1 style={{ padding: '25px 0px' }}>Comments Data</h1>
+                    {/* <h1 style={{ padding: '25px 0px' }}>Comments Data</h1>
                     <table border={1}>
                         <thead>
                             <tr>
@@ -188,8 +234,45 @@ const ApiCalling = () => {
                                 ))
                             }
                         </tbody>
-                    </table>
+                    </table> */}
 
+                    {/* <h1 style={{ padding: '25px 0px' }}>Productes Data</h1>
+                    <table border={1}>
+                        <thead>
+                            <tr>
+                                <th>ProductId</th>
+                                <th>ProductName</th>
+                                <th>Price</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                list4.map((i, index) => (
+                                    <tr key={index}>
+                                        <td>{i.ProductId}</td>
+                                        <td>{i.ProductName}</td>
+                                        <td>{i.Price}</td>
+                                        <td>
+                                            <button className='Button' onClick={() => deleteData(i._id)}>Delate</button>
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                    <br /><br /><br />
+                    <ToastContainer position="bottom-right"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick={false}
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="light"
+                        transition={Slide} /> */}
                 </Container>
             </center>
 

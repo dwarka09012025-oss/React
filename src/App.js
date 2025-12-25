@@ -1,11 +1,11 @@
 import './App.css';
-// import ApiCalling from './Components/ApiCalling';
+import ApiCalling from './Components/ApiCalling';
 // import ResultFormik from './Components/ResultFormik';
 // import ResultFormikTag from './Components/ResultFormikTag';
 // import FormikTag from './Components/FormikTag';
 // import Formik from './Components/Formik';
 // import Studentresult from './Components/Studentresult';
-import TicTacToe from './Components/TicTacToe';
+// import TicTacToe from './Components/TicTacToe';
 // import Tictectoe1 from './Components/Tictectoe1.jsx'
 // import Show from './Components/Show';
 // import InputHandle from './Components/InputHandle';
@@ -41,14 +41,14 @@ function App() {
       {/* <Bootstrap /> */}
       {/* <InputHandle /> */}
       {/* <Show /> */}
-      <TicTacToe />
+      {/* <TicTacToe /> */}
       {/* <Tictectoe1 /> */}
       {/* <Studentresult /> */}
       {/* <Formik /> */}
       {/* <FormikTag /> */}
       {/* <ResultFormik /> */}
       {/* <ResultFormikTag /> */}
-      {/* <ApiCalling /> */}
+      <ApiCalling />
 
       {/* <Router>
         <Switch>
