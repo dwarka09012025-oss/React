@@ -1,17 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
-// import { Slide, ToastContainer, toast } from 'react-toastify';
+import { Slide, ToastContainer, toast } from 'react-toastify';
 
 const ApiCalling = () => {
 
     // const [list, setList] = useState([])
-    const [list1, setList1] = useState([])
+    // const [list1, setList1] = useState([])
     // const [list2, setList2] = useState([])
     // const [list3, setList3] = useState([])
-    // const [list4, setList4] = useState([])
+    const [list4, setList4] = useState([])
 
-    // const token = 'LpVCE0K5OOBStEfx'
+    const token = 'LpVCE0K5OOBStEfx'
 
     // const [no, setNo] = useState(0)
     // useEffect(() => {
@@ -24,10 +24,10 @@ const ApiCalling = () => {
         // console.log("test");
 
         // ProductesData()
-        CardData()
+        // CardData()
         // PostData()
         // CommentsData()
-        // Data1()
+        Data1()
     }, [])
 
     // function ProductesData() {
@@ -41,16 +41,16 @@ const ApiCalling = () => {
     //         })
     // }
 
-    function CardData() {
-        axios.get('https://dummyjson.com/carts')
-            .then((res) => {
-                console.log(res.data.carts);
-                setList1(res.data.carts)
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }
+    // function CardData() {
+    //     axios.get('https://dummyjson.com/carts')
+    //         .then((res) => {
+    //             console.log(res.data.carts);
+    //             setList1(res.data.carts)
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         })
+    // }
 
     // function PostData() {
     //     axios.get('https://dummyjson.com/posts')
@@ -74,38 +74,38 @@ const ApiCalling = () => {
     //         })
     // }
 
-    // function Data1() {
-    //     axios.get(' https://generateapi.techsnack.online/api/Product', {
-    //         headers: {
-    //             Authorization: token
-    //         }
-    //     })
-    //         .then((res) => {
-    //             console.log(res.data.Data);
-    //             setList4(res.data.Data)
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         })
-    // }
+    function Data1() {
+        axios.get(' https://generateapi.techsnack.online/api/Product', {
+            headers: {
+                Authorization: token
+            }
+        })
+            .then((res) => {
+                console.log(res.data.Data);
+                setList4(res.data.Data)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
 
-    // const deleteData = (id) => {
-    //     // console.log(id);
-    //     // axios.delete('https://generateapi.techsnack.online/api/Product/' + id)
-    //     axios.delete(`https://generateapi.techsnack.online/api/Product/${id}`, {
-    //         headers: {
-    //             Authorization: token
-    //         },
-    //     })
-    //         .then((id) => {
-    //             // console.log(id);
-    //             toast.success("Success")
-    //             Data1()
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         })
-    // }
+    const deleteData = (id) => {
+        // console.log(id);
+        // axios.delete('https://generateapi.techsnack.online/api/Product/' + id)
+        axios.delete(`https://generateapi.techsnack.online/api/Product/${id}`, {
+            headers: {
+                Authorization: token
+            },
+        })
+            .then((id) => {
+                // console.log(id);
+                toast.success("Success")
+                Data1()
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
 
     return (
         <>
@@ -156,7 +156,7 @@ const ApiCalling = () => {
                     </table>
                     <br /><br /><br /> */}
 
-                    <h1 style={{ padding: '25px 0px' }}>Cards Data</h1>
+                    {/* <h1 style={{ padding: '25px 0px' }}>Cards Data</h1>
                     <table border={1}>
                         <thead>
                             <tr>
@@ -173,7 +173,7 @@ const ApiCalling = () => {
                                 list1.map((i, index) => (
                                     <tr key={index}>
                                         <td>{i.id}</td>
-                                        <td>{i.products}</td>
+                                        <td>{i.products.id}</td>
                                         <td>{i.total}</td>
                                         <td>{i.totalProducts}</td>
                                         <td>{i.totalQuantity}</td>
@@ -183,7 +183,7 @@ const ApiCalling = () => {
                             }
                         </tbody>
                     </table>
-                    <br /><br /><br />
+                    <br /><br /><br /> */}
 
                     {/* <h1 style={{ padding: '25px 0px' }}>Posts Data</h1>
                     <table border={1}>
@@ -236,7 +236,7 @@ const ApiCalling = () => {
                         </tbody>
                     </table> */}
 
-                    {/* <h1 style={{ padding: '25px 0px' }}>Productes Data</h1>
+                    <h1 style={{ padding: '25px 0px' }}>Productes Data</h1>
                     <table border={1}>
                         <thead>
                             <tr>
@@ -272,7 +272,7 @@ const ApiCalling = () => {
                         draggable
                         pauseOnHover
                         theme="light"
-                        transition={Slide} /> */}
+                        transition={Slide} />
                 </Container>
             </center>
 

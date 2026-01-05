@@ -1,5 +1,7 @@
 import './App.css';
-import ApiCalling from './Components/ApiCalling';
+import ImageAPI from './Components/ImageAPI';
+// import Postman from './Components/Postman';
+// import ApiCalling from './Components/ApiCalling';
 // import ResultFormik from './Components/ResultFormik';
 // import ResultFormikTag from './Components/ResultFormikTag';
 // import FormikTag from './Components/FormikTag';
@@ -48,7 +50,9 @@ function App() {
       {/* <FormikTag /> */}
       {/* <ResultFormik /> */}
       {/* <ResultFormikTag /> */}
-      <ApiCalling />
+      {/* <ApiCalling /> */}
+      {/* <Postman /> */}
+      <ImageAPI />
 
       {/* <Router>
         <Switch>

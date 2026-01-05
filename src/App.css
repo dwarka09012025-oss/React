@@ -240,7 +240,7 @@ h3 {
 
 /* ========== Studentresult.jsx / ResultFormikTag.jsx ========== */
 
-input {
+/* input {
   width: 170px;
 }
 
@@ -293,7 +293,7 @@ table thead tr th {
   border: 2px solid black;
   border-radius: 20px;
   background-color: aquamarine;
-}
+} */
 
 /* ========== ResultFormik.jsx ========== */
 
@@ -404,3 +404,190 @@ table thead tr th {
     font-size: 1.3rem;
   }
 } */
+
+/* ========== Postman.jsx ========== */
+
+/* .Div1 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.w-50 {
+  width: 50%;
+  padding: 0px 10px;
+}
+
+.Product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  text-align: left;
+}
+
+table thead tr th {
+  background-color: #04aa6d;
+  color: white;
+  text-align: center;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto 20px;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: aquamarine;
+} */
+
+
+/* ========== ImageAPI.jsx ========== */
+
+/* Container */
+.api-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+}
+
+/* Form Styling */
+.form-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.styled-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.custom-input {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  transition: border 0.2s;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.submit-btn {
+  background: #3182ce;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #2b6cb0;
+}
+
+/* Responsive Table */
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table th {
+  background: #f7fafc;
+  padding: 1rem;
+  text-align: left;
+  color: #718096;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.responsive-table td {
+  padding: 1rem;
+  border-top: 1px solid #edf2f7;
+  vertical-align: middle;
+}
+
+.table-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Mobile Responsive Table Hack */
+@media screen and (max-width: 600px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tr {
+    display: block;
+    border-bottom: 2px solid #edf2f7;
+    padding: 1rem 0;
+  }
+
+  .responsive-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 0.5rem 1rem;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #718096;
+  }
+}
