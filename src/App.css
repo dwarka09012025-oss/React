@@ -407,7 +407,7 @@ table thead tr th {
 
 /* ========== Postman.jsx ========== */
 
-/* .Div1 {
+.Div1 {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -455,13 +455,12 @@ table thead tr th {
   border: 2px solid black;
   border-radius: 20px;
   background-color: aquamarine;
-} */
+}
 
 
 /* ========== ImageAPI.jsx ========== */
 
-/* Container */
-.api-container {
+/* .api-container {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
@@ -474,7 +473,6 @@ table thead tr th {
   margin-bottom: 2rem;
 }
 
-/* Form Styling */
 .form-card {
   background: #ffffff;
   padding: 2rem;
@@ -528,7 +526,6 @@ table thead tr th {
   background: #2b6cb0;
 }
 
-/* Responsive Table */
 .table-wrapper {
   overflow-x: auto;
   background: white;
@@ -565,7 +562,6 @@ table thead tr th {
   border: 1px solid #e2e8f0;
 }
 
-/* Mobile Responsive Table Hack */
 @media screen and (max-width: 600px) {
   .responsive-table thead {
     display: none;
@@ -590,4 +586,4 @@ table thead tr th {
     font-weight: bold;
     color: #718096;
   }
-}
+} */
