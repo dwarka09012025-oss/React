@@ -29,6 +29,8 @@ const ProductAPI = () => {
     };
 
     const PostData = (values, { resetForm }) => {
+        console.log(values);
+
         const formData = new FormData();
         formData.append("name", values.name);
         formData.append("price", values.price);
@@ -39,7 +41,8 @@ const ProductAPI = () => {
 
         if (values.other_image) {
             for (let i = 0; i < values.other_image.length; i++) {
-                formData.append("other_image[]", values.other_image[i]);
+                formData.append("other_image", values.other_image[i]);
+                resetForm();
             }
         }
 
@@ -61,7 +64,7 @@ const ProductAPI = () => {
     }
 
     return (
-        <Container className="py-5 ">
+        <Container className="py-5">
             <h1>Product API calling</h1>
             <Formik initialValues={ini} onSubmit={PostData}>
                 {({ setFieldValue }) => (
@@ -88,15 +91,15 @@ const ProductAPI = () => {
 
             <hr />
 
-            <div className="d-flex flex-wrap">
+            <div className="d-flex flex-wrap justify-content-center">
                 {products.map((product) => (
-                    <div key={product.id} style={{ border: '1px solid #ddd', margin: '10px', padding: '15px', width: '300px' }}>
+                    <div key={product.id} style={{ border: '1px solid #ddd', margin: '15px', padding: '15px', width: '30%' }}>
                         <div>
                             <img src={product.image} alt="Product" style={{ width: '100%', height: '200px', objectFit: 'contain' }} />
                         </div>
                         <h3 className="mt-2">{product.name}</h3>
-                        <p className="mb-1"><strong>Price:</strong> {product.price}</p>
-                        <p className="mb-1"><strong>MRP:</strong><del className='text-decoration-line-through'>{product.MRP}</del></p>
+                        <p className="mb-1"><strong>Price : </strong> {product.price}</p>
+                        <p className="mb-1"><strong>MRP : </strong><del className='text-decoration-line-through'>{product.MRP}</del></p>
                         <div className="mb-2">
                             {Array.from({ length: 5 }, (_, index) => (
                                 <span key={index} style={{ color: 'gold' }}>
@@ -104,9 +107,9 @@ const ProductAPI = () => {
                                 </span>
                             ))}
                         </div>
-                        <div className="d-flex flex-wrap gap-1">
+                        <div className="d-flex flex-wrap gap-1 justify-content-around">
                             {Array.isArray(product.other_image) && product.other_image.map((imgUrl, idx) => (
-                                <img key={idx} src={imgUrl} alt={`Other ${idx}`} width="50" height="50" style={{ objectFit: 'cover', border: '1px solid #eee' }} />
+                                <img key={idx} src={imgUrl} alt={`Other ${idx}`} width="80px" height="80px" style={{ objectFit: 'cover', border: '1px solid #eee' }} />
                             ))}
                         </div>
                     </div>
