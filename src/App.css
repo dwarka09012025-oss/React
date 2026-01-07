@@ -6,6 +6,45 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/* {{product.rating}/5 '★''☆'} */
+/* {<table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>MRP</th>
+                        <th>Image</th>
+                        <th>Rating</th>
+                        <th>Other Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {products.map((product) => (
+                        <tr key={product.id}>
+                            <td>{product.name}</td>
+                            <td>{product.price}</td>
+                            <td>{product.MRP}</td>
+                            <td><img src={product.image} alt="Product" width="100" /></td>
+                            <td>
+                                {
+                                    Array.from({ length: 5 }, (_, index) => (
+                                        <span key={index}>
+                                            {index < product.rating ? '⭐' : '☆'}
+                                        </span>
+                                    ))
+                                }
+                            </td>
+                            <td>
+                                <img src={product.other_image[0]} alt="Other Image" width="100" />
+                                <img src={product.other_image[1]} alt="Other Image" width="100" />
+                                <img src={product.other_image[2]} alt="Other Image" width="100" />
+                                <img src={product.other_image[3]} alt="Other Image" width="100" />
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table> */
+
 /* ======================== Student.jsx ========================== */
 
 /* .Div-1 {
